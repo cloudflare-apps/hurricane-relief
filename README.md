@@ -36,10 +36,10 @@ An directory for icons, tile images, and screenshots.
 
 - <a href="https://www.cloudflare.com/apps/developer/docs/getting-started">The Cloudflare developer documentation</a> for examples and API usage.
 
-<a href="https://www.cloudflare.com/apps/[[YOUR APP ALIAS]]/install?source=button">
+<a href="https://www.cloudflare.com/apps/hurricane-relief/install?source=button">
   <img
     src="https://install.cloudflareapps.com/install-button.png"
-    alt="Install [[YOUR APP NAME]] with Cloudflare"
+    alt="Install Hurricane Relief Button with Cloudflare"
     border="0"
     width="150">
 </a>
