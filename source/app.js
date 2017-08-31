@@ -6,7 +6,7 @@
   const CHARITIES = [
     {
       label: 'Greater Houston Community Foundation',
-      url: 'https://ghcf.org/hurricane-relief/'
+      url: 'http://cfl.re/greaterhouston'
     },
     {
       label: 'United Way Houston',
