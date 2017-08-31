@@ -18,7 +18,7 @@
     },
     {
       label: 'Salvation Army USA',
-      url: 'https://give.salvationarmyusa.org/site/Donation2?df_id=27651&mfc_pref=T&27651.donation=form1'
+      url: 'http://cfl.re/2vw2Zcb'
     }
   ]
 
