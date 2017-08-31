@@ -10,11 +10,11 @@
     },
     {
       label: 'United Way Houston',
-      url: 'https://www.unitedwayhouston.org/flood/flood-donation/'
+      url: 'http://cfl.re/unitedwayrelief'
     },
     {
       label: 'Center for Disaster Philanthropy',
-      url: 'https://disasterphilanthropy.networkforgood.com/'
+      url: 'http://cfl.re/disasterphilanthropy'
     },
     {
       label: 'Salvation Army USA',
