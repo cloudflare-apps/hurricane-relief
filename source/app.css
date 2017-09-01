@@ -30,6 +30,7 @@ cloudflare-app[app="hurricane-relief"] alert-wrapper {
   line-height: 1;
   display: flex;
   border-top: 3px solid #f73b38;
+  border-bottom: 1px solid #f9f9f9;
   z-index: 1;
 }
 
@@ -121,7 +122,6 @@ cloudflare-app[app="hurricane-relief"] charties-cta:after {
 }
 
 cloudflare-app[app="hurricane-relief"] charties-select {
-  border-top: 1px solid #f3f3f3;
   background: rgba(255, 255, 255, 0.975);
   position: absolute;
   display: flex;
@@ -143,6 +143,8 @@ cloudflare-app[app="hurricane-relief"].data-slide-out charties-select {
 }
 
 cloudflare-app[app="hurricane-relief"] .cf-charity-link {
+  display: flex !important;
+  justify-content: space-between !important;
   color: #000 !important;
   text-decoration: none !important;
   border: none !important;
@@ -151,6 +153,12 @@ cloudflare-app[app="hurricane-relief"] .cf-charity-link {
   border-top: 1px solid transparent !important;
   cursor: pointer !important;
   padding: .7em .5em !important;
+}
+
+cloudflare-app[app="hurricane-relief"] .cf-charity-link::after {
+  display: inline;
+  content: "›";
+  opacity: 0.5;
 }
 
 cloudflare-app[app="hurricane-relief"] .cf-charity-link + .cf-charity-link {
