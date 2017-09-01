@@ -3,18 +3,6 @@
     "body": [
       {
         "type": "style",
-        "src": "./vendor/select-theme-default.css"
-      },
-      {
-        "type": "script",
-        "src": "./vendor/tether.js"
-      },
-      {
-        "type": "script",
-        "src": "./vendor/select.js"
-      },
-      {
-        "type": "style",
         "src": "./build/app.css"
       },
       {

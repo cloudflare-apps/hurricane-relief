@@ -1,7 +1,7 @@
 (function () {
   'use strict'
 
-  if (!window.addEventListener) return // Check for IE9+
+  if (!window.addEventListener || !document.documentElement.classList) return // Check for IE9+
 
   const CHARITIES = [
     {
@@ -166,6 +166,8 @@
     element.style.zIndex = getMaxZIndex() + 1
     updateElementStyle()
 
+    const wrapper = document.createElement('alert-wrapper')
+
     const messageContainer = document.createElement('alert-message')
 
     // NOTE: this fixes an oddity in the App Bundler that omits blank strings.
@@ -174,31 +176,33 @@
 
     messageContainer.appendChild(messageContent)
 
-    const charitiesSelect = document.createElement('select')
+    const cta = document.createElement('charties-cta')
+    cta.textContent = 'Donate now'
 
-    const defaultOption = document.createElement('option')
-    defaultOption.textContent = 'Donate now'
-    defaultOption.disabled = true
-    defaultOption.selected = true
-    defaultOption.hidden = true
-    charitiesSelect.appendChild(defaultOption)
+    document.body.addEventListener('click', event => {
+      if (element.contains(event.target)) return
+
+      element.classList.remove('data-slide-out')
+    })
+
+    cta.addEventListener('click', () => element.classList.toggle('data-slide-out'))
+
+    messageContent.appendChild(cta)
+    wrapper.appendChild(messageContainer)
+
+    const charitiesSelect = document.createElement('charties-select')
 
     CHARITIES.forEach(charity => {
-      const option = document.createElement('option')
+      const option = document.createElement('charity-option')
       option.textContent = charity.label
-      option.value = charity.url
+      charitiesSelect.addEventListener('click', (event) => {
+        window.open(charity.url, '_blank')
+        element.classList.remove('data-slide-out')
+      })
       charitiesSelect.appendChild(option)
     })
 
-    charitiesSelect.addEventListener('change', (event) => {
-      const [selected] = event.target.selectedOptions
-      window.open(selected.value, '_blank')
-      hideWelcomeBar()
-    })
-
-    messageContent.appendChild(charitiesSelect)
-
-    element.appendChild(messageContainer)
+    element.appendChild(charitiesSelect)
 
     const dismissButton = document.createElement('alert-dismiss')
 
@@ -207,14 +211,10 @@
 
     dismissButton.addEventListener('click', hideWelcomeBar)
 
-    element.appendChild(dismissButton)
+    wrapper.appendChild(dismissButton)
+    element.appendChild(wrapper)
 
     document.documentElement.setAttribute(VISIBILITY_ATTRIBUTE, 'visible')
-
-    window.Select.init({
-      select: 'cloudflare-app["hurricane-relief"] > select',
-      className: 'select-theme-hurricane-relief'
-    })
   }
 
   function bootstrap () {
