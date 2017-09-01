@@ -197,13 +197,15 @@
     const charitiesSelect = document.createElement('charties-select')
 
     CHARITIES.forEach(charity => {
-      const option = document.createElement('charity-option')
-      option.textContent = charity.label
-      charitiesSelect.addEventListener('click', (event) => {
-        window.open(charity.url, '_blank')
+      const anchor = document.createElement('a')
+      anchor.className = 'cf-charity-link'
+      anchor.textContent = charity.label
+      anchor.target = '_blank'
+      anchor.href = charity.url
+      anchor.addEventListener('click', (event) => {
         element.classList.remove('data-slide-out')
       })
-      charitiesSelect.appendChild(option)
+      charitiesSelect.appendChild(anchor)
     })
 
     element.appendChild(charitiesSelect)
