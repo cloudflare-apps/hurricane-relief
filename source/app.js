@@ -17,6 +17,10 @@
       url: 'http://cfl.re/disasterphilanthropy'
     },
     {
+      label: 'Global Giving',
+      url: 'http://cfl.re/globalgivingharvey'
+    },
+    {
       label: 'Salvation Army USA',
       url: 'http://cfl.re/2vw2Zcb'
     }
